@@ -1,0 +1,38 @@
+name       : dnf-plugins-core
+version    : 2.1.5
+release    : 1
+source     :
+    - https://github.com/rpm-software-management/dnf-plugins-core/archive/2.1.5/dnf-plugins-core-2.1.5.tar.gz : a78433e220125d356f05a684d4d7fcec59247b5e8bcfdec9c657154affbf171d
+license    :
+    - GPL-2.0+
+component  : programming.devel
+summary    : Core plugins for DNF
+description: |
+    Dandified Yum (DNF) is the next upcoming major version of Yum.
+    It does package management using RPM, libsolv and libdnf libraries.
+
+    This package enhances DNF with builddep, config-manager, copr, debug,
+    debuginfo-install, download, leaves, local, needs-restarting, repoclosure,
+    repograph, repomanage, reposync, show-leaves, and versionlock commands.
+
+    Additionally, this package provides the generate_completion_cache passive plugin.
+builddeps  :
+    - python-sphinx
+    - dnf
+rundeps    :
+    - dnf
+    - createrepo_c
+setup      : |
+    mkdir build; cd build
+    %cmake .. -DPYTHON_DESIRED:str=3
+build      : |
+    %make -C build
+    %make doc-man -C build
+install    : |
+    %make_install -C build
+    # Drop the yum-utils shim in libexec
+    rm -rf $installdir/usr/libexec/
+    # Drop weird CMakeFiles directories
+    find $installdir -name "CMakeFiles" -type d | xargs rm -rf
+    # Drop garbage doctrees files
+    find $installdir -name ".doctrees" -type d | xargs rm -rf

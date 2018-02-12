@@ -1,0 +1,71 @@
+<PISI>
+    <Source>
+        <Name>dnf-plugins-core</Name>
+        <Packager>
+            <Name>Neal Gompa</Name>
+            <Email>ngompa13@gmail.com</Email>
+        </Packager>
+        <License>GPL-2.0+</License>
+        <PartOf>programming.devel</PartOf>
+        <Summary xml:lang="en">Core plugins for DNF</Summary>
+        <Description xml:lang="en">Dandified Yum (DNF) is the next upcoming major version of Yum.
+It does package management using RPM, libsolv and libdnf libraries.
+
+This package enhances DNF with builddep, config-manager, copr, debug,
+debuginfo-install, download, leaves, local, needs-restarting, repoclosure,
+repograph, repomanage, reposync, show-leaves, and versionlock commands.
+
+Additionally, this package provides the generate_completion_cache passive plugin.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>dnf-plugins-core</Name>
+        <Summary xml:lang="en">Core plugins for DNF</Summary>
+        <Description xml:lang="en">Dandified Yum (DNF) is the next upcoming major version of Yum.
+It does package management using RPM, libsolv and libdnf libraries.
+
+This package enhances DNF with builddep, config-manager, copr, debug,
+debuginfo-install, download, leaves, local, needs-restarting, repoclosure,
+repograph, repomanage, reposync, show-leaves, and versionlock commands.
+
+Additionally, this package provides the generate_completion_cache passive plugin.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <Files>
+            <Path fileType="config">/etc/dnf/plugins/debuginfo-install.conf</Path>
+            <Path fileType="config">/etc/dnf/plugins/local.conf</Path>
+            <Path fileType="config">/etc/dnf/plugins/versionlock.conf</Path>
+            <Path fileType="config">/etc/dnf/plugins/versionlock.list</Path>
+            <Path fileType="config">/etc/dnf/protected.d</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/builddep.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/config_manager.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/copr.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/debug.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/debuginfo-install.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/download.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/generate_completion_cache.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/leaves.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/local.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/needs_restarting.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/repoclosure.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/repograph.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/repomanage.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/reposync.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/show_leaves.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnf-plugins/versionlock.py</Path>
+            <Path fileType="library">/usr/lib/python3.6/site-packages/dnfpluginscore/__init__.py</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2018-02-12</Date>
+            <Version>2.1.5</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Neal Gompa</Name>
+            <Email>ngompa13@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
